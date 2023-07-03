@@ -1,0 +1,8 @@
+.profile__subtitle{
+    color: #fff;
+    grid-area: profile__subtitle;
+    margin: 0;
+    font-family: Inter, Arial, "sans-serif";
+    line-height: normal;
+    font-size: 18px;
+}
