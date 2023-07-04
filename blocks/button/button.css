@@ -7,5 +7,12 @@
     outline: none;
     border: none;
     overflow: hidden; */
-    background: transparent center no-repeat;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #000;
 }
+
+.button:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
