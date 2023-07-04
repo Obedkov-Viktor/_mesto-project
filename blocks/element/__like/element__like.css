@@ -1,1 +1,4 @@
-.element__like {}
+.element__like {
+    grid-area: element__like;
+    align-self: center;
+}

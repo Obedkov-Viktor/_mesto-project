@@ -1,1 +1,8 @@
-.element__list{}
+.element__list{
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(284px, 1fr));
+    column-gap: 14px;
+    row-gap: 21px;
+}

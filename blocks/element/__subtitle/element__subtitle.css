@@ -1,1 +1,16 @@
-.element__subtitle{}
+.element__subtitle {
+    color: #000;
+    font-size: 24px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    grid-area: element__subtitle;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-left: 21px;
+    margin-top: 26px;
+    margin-bottom: 24px;
+    width: 200px;
+}
