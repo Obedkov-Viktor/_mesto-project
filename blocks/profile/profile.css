@@ -4,3 +4,18 @@
     margin-top: 40px;
     margin-bottom: 50px;
 }
+
+@media screen and (max-width:769px) {
+    .profile {
+      max-width: 585px;
+      margin: 0 auto;
+    }
+  }
+
+  @media screen and (max-width:321px) {
+    .profile {
+      flex-direction: column;
+      max-width: 282px;    
+      margin: 0 auto;
+    }
+  }

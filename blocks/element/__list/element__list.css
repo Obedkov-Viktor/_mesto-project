@@ -6,3 +6,8 @@
     column-gap: 14px;
     row-gap: 21px;
 }
+@media screen and (max-width:321px) {
+    .element__list {
+      grid-template-columns: 1fr;
+    }
+  }

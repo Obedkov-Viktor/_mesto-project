@@ -1,0 +1,6 @@
+.popup__close-button{
+    position: absolute;
+    margin-top: -45px;
+    right: -50px;
+    background-color: none;
+}
