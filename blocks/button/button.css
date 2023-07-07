@@ -1,13 +1,10 @@
 .button{
-    border: 1px solid #fff;
     /* transition: all 0.4s ease-in-out;
     cursor: pointer;
     outline: none;
-    border: none;
     overflow: hidden; */
     background-repeat: no-repeat;
     background-position: center;
-    background-color: #000;
     color: #fff;
     font-family: 'Inter', Arial, sans-serif;
 }
