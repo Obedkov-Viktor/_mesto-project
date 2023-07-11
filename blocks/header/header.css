@@ -8,22 +8,3 @@
   margin: 0 auto;
   
 }
-
-@media screen and (max-width:1025px) {
-  .header {
-    max-width: 880px;
-    margin: 0 auto;
-  }
-}
-
-@media screen and (max-width:769px) {
-  .header {
-    max-width: 585px;
-  }
-}
-@media screen and (max-width: 320px) {
-  .root__section{
-      max-width: 282px;    
-      margin: 0 auto;
-  }
-}

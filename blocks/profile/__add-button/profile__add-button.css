@@ -6,3 +6,17 @@
     border: 2px solid #fff;
     background-color: transparent;
 }
+
+@media screen and (max-width:880px) {
+    .profile__add-button{
+        margin-right: 27px;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .profile__add-button{
+        width: 282px;
+        height: 50px;
+        margin: 0;
+    }
+}

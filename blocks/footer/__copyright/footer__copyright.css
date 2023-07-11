@@ -1,16 +1,24 @@
 .footer__copyright {
-    color: #545454;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin-top: 66px;
-    margin-bottom: 60px;
+  color: #545454;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 66px;
+  margin-bottom: 60px;
 }
 
+@media screen and (max-width:880px) {
+  .footer__copyright {
+    margin-left: 27px;
+  }
+}
+
+
 @media screen and (max-width:320px) {
-    .footer__copyright {
-        font-size: 14px;
-        margin-left: 19px;
-    }
+  .footer__copyright {
+    margin-top: 46px;
+    font-size: 14px;
+    margin-left: 19px;
+  }
 }
