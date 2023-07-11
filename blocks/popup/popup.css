@@ -1,5 +1,5 @@
 .popup {
-  display: none;
+  display: flex;
   width: 100vw;
   height: 113vh;
   top: 0;
@@ -9,3 +9,9 @@
   position: fixed;
   color: #FFF;
   }
+
+  @media screen and (max-width:320px) {
+    .popup {
+      height: 44vh;
+    }
+}

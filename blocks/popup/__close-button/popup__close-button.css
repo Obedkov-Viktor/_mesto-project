@@ -8,3 +8,13 @@
     border: none;
     background-color: transparent;
 }
+
+@media screen and (max-width:320px) {
+    .popup__close-button {
+        background-image: url(../../../images/Close_Icon_Mob.svg);
+        width: 20px;
+        height: 20px;
+        right: 0px;
+        top: -35px;
+    }
+}
