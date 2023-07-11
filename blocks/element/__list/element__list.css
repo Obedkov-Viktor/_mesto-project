@@ -1,14 +1,9 @@
-.element__list{
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(284px, 1fr));
-    column-gap: 14px;
-    row-gap: 21px;
-    margin: 0;
+.element__list {
+  background: #fff;
+  max-width: 282px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-areas:
+    "element__image element__image "
+    "element__subtitle element__like";
 }
-@media screen and (max-width:321px) {
-    .element__list {
-      grid-template-columns: 1fr;
-    }
-  }

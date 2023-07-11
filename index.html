@@ -9,62 +9,60 @@
 </head>
 
 <body class="body">
-    <div class="root">
-        <div class="page">
-            <header class="header root__section">
-                <a href="#" class="header__link">
-                    <img class="header__logo" src="./images/logo_white.svg" alt="Логотип">
-                </a>
-            </header>
-            <main class="content">
-                <section class="profile root__section">
-                    <img class="profile__avatar" src="./images/avatar.jpg" alt="Аватар">
-                    <div class="profile__info">
-                        <h1 class="profile__name">Жак-Ив Кусто </h1>
-                        <button class="profile__edit-button button" type="button" aria-label="Редактировать."></button>
-                        <p class="profile__subtitle">Иследователь океана</p>
-                    </div>
-                    <button class="profile__add-button button" type="button" aria-label="Добавить."></button>
-                </section>
-                <section class="elements root__section">
-                    <ul class="element__list">
-                        <li class="element">
-                            <img class="element__image" src="./images/karachaevsk.jpg" alt="Карачаевск город">
-                            <h2 class="element__subtitle">Карачаевcк-Черкесия</h2>
-                            <button class="element__like" type="button"></button> 
-                        </li>
-                        <li class="element">
-                            <img class="element__image" src="./images/elbrus.jpg" alt="Гора Эльбрус">
-                            <h2 class="element__subtitle">Гора Эльбрус</h2>
-                            <button class="element__like" type="button"></button> 
-                        </li>
-                        <li class="element">
-                            <img class="element__image" src="./images/dombai.jpg" alt="Домбай">
-                            <h2 class="element__subtitle">Домбай</h2>
-                            <button class="element__like" type="button"></button> 
-                        </li>
-                        <li class="element">
-                            <img class="element__image" src="./images/elbrus.jpg" alt="Гора Эльбрус">
-                            <h2 class="element__subtitle">Гора Эльбрус</h2>
-                            <button class="element__like" type="button"></button> 
-                        </li>
-                        <li class="element">
-                            <img class="element__image" src="./images/dombai.jpg" alt="Домбай">
-                            <h2 class="element__subtitle">Домбай</h2>
-                            <button class="element__like" type="button"></button> 
-                        </li>
-                        <li class="element">
-                            <img class="element__image" src="./images/karachaevsk.jpg" alt="Карачаевск город">
-                            <h2 class="element__subtitle">Карачаевcк-Черкесия</h2>
-                            <button class="element__like" type="button"></button> 
-                        </li>
-                    </ul>
-                </section>
-            </main>
-            <footer class="footer root__section">
-                <p class="footer__copyright">&copy; 2023 Mesto Russia</p>
-            </footer>
-        </div>
+    <div class="page">
+        <header class="header">
+            <a href="#" class="header__link">
+                <img class="header__logo" src="./images/logo_white.svg" alt="Логотип">
+            </a>
+        </header>
+        <main class="content">
+            <section class="profile">
+                <img class="profile__avatar" src="./images/avatar.jpg" alt="Аватар">
+                <div class="profile__info">
+                    <h1 class="profile__name">Жак-Ив Кусто </h1>
+                    <button class="profile__edit-button button" type="button" aria-label="Редактировать."></button>
+                    <p class="profile__subtitle">Иследователь океана</p>
+                </div>
+                <button class="profile__add-button button" type="button" aria-label="Добавить."></button>
+            </section>
+            <section class="elements">
+                <ul class="elements__element">
+                    <li class="element__list">
+                        <img class="element__image" src="./images/karachaevsk.jpg" alt="Карачаевск город">
+                        <h2 class="element__subtitle">Карачаевcк-Черкесия</h2>
+                        <button class="element__like" type="button"></button>
+                    </li>
+                    <li class="element__list">
+                        <img class="element__image" src="./images/elbrus.jpg" alt="Гора Эльбрус">
+                        <h2 class="element__subtitle">Гора Эльбрус</h2>
+                        <button class="element__like" type="button"></button>
+                    </li>
+                    <li class="element__list">
+                        <img class="element__image" src="./images/dombai.jpg" alt="Домбай">
+                        <h2 class="element__subtitle">Домбай</h2>
+                        <button class="element__like" type="button"></button>
+                    </li>
+                    <li class="element__list">
+                        <img class="element__image" src="./images/elbrus.jpg" alt="Гора Эльбрус">
+                        <h2 class="element__subtitle">Гора Эльбрус</h2>
+                        <button class="element__like" type="button"></button>
+                    </li>
+                    <li class="element__list">
+                        <img class="element__image" src="./images/dombai.jpg" alt="Домбай">
+                        <h2 class="element__subtitle">Домбай</h2>
+                        <button class="element__like" type="button"></button>
+                    </li>
+                    <li class="element__list">
+                        <img class="element__image" src="./images/karachaevsk.jpg" alt="Карачаевск город">
+                        <h2 class="element__subtitle">Карачаевcк-Черкесия</h2>
+                        <button class="element__like" type="button"></button>
+                    </li>
+                </ul>
+            </section>
+        </main>
+        <footer class="footer">
+            <p class="footer__copyright">&copy; 2023 Mesto Russia</p>
+        </footer>
     </div>
     <div class="popup">
         <div class="popup__container">
@@ -73,8 +71,8 @@
             <h2 class="popup__title">Редактировать профиль</h2>
             <form name="profile_edit">
                 <fieldset class="popup__fieldset">
-                    <input class="popup__input" type="text" id="name" name="name" value=""
-                        placeholder="Жак-Ив Кусто" required minlength="2" maxlength="40">
+                    <input class="popup__input" type="text" id="name" name="name" value="" placeholder="Жак-Ив Кусто"
+                        required minlength="2" maxlength="40">
                     <input class="popup__input" type="text" id="about" name="about" value=""
                         placeholder="Исследователь океана" required minlength="2" maxlength="200">
                     <button class="popup__save-button button" type="submit">Сохранить</button>

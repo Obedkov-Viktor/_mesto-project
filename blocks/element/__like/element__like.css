@@ -8,3 +8,7 @@
     background-repeat: no-repeat;
     background-color: transparent;
 }
+.element__like:hover{
+    cursor: pointer;
+    opacity: 0.6;
+}
