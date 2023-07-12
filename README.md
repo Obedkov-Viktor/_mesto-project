@@ -17,7 +17,4 @@
 git clone https://github.com/Obedkov-Viktor/mesto-project.git
 ```
 
-## Ссылка «Mesto Russia»
-```
-https://obedkov-viktor.github.io/_mesto-project/
-```
+**Ссылка на сайт на GitHub Pages «Mesto Russia»** https://obedkov-viktor.github.io/_mesto-project/
