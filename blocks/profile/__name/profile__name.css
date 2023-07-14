@@ -17,5 +17,9 @@
         font-size: 27px;
         line-height: 32px;
         justify-items: center;
+        color: #FFF;
+        text-align: center;
+        font-size: 27px;
+        line-height: normal;
     }
 }

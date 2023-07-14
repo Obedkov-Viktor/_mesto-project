@@ -13,6 +13,10 @@
     .profile__subtitle{
         font-size: 14px; 
         line-height: 17px;
-        margin-bottom: 35px;
+        text-align: center;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
     }
 }
