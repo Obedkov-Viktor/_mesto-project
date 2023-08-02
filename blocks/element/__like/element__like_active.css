@@ -1,0 +1,14 @@
+.element__like_active {
+    background-image: url(../../../images/like_active.svg);
+    grid-area: element__like;
+    align-self: center;
+    height: 22px;
+    width: 22px;
+    border: none;
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+.element__like_active:hover{
+    cursor: pointer;
+    opacity: 0.5;
+}
