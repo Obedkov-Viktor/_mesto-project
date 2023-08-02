@@ -7,7 +7,7 @@ const nameInput = document.querySelector('.popup__input[name="name"]');
 const jobInput = document.querySelector('.popup__input[name="about"]');
 const addButton = document.querySelector('.profile__add-button');
 const template = document.querySelector('#elements');
-
+const cardDelete = document.querySelector('.element__delete');
 const initialCards = [
     {
         name: 'Архыз',
@@ -35,15 +35,24 @@ const initialCards = [
     }
 ];
 
-
 function renderCard({name, link}) {
     const newElement = template.content.cloneNode(true);
     const image = newElement.querySelector('.element__image');
+    const subtitle = newElement.querySelector('.element__subtitle');
+    const card = newElement.querySelector('.element');
+    const list = document.querySelector('.elements__list');
+    const likeButton = card.querySelector('.element__like');
+    const elementDelete = card.querySelector('.element__delete');
     image.src = link;
     image.alt = 'Новое изображение';
-    const subtitle = newElement.querySelector('.element__subtitle');
     subtitle.textContent = name;
-    const list = document.querySelector('.elements__list');
+    likeButton.addEventListener('click', function (){
+        likeButton.classList.toggle('element__like_active');
+    });
+    elementDelete.addEventListener('click', function (){
+       card.remove();
+    });
+
     list.appendChild(newElement);
 }
 
@@ -105,19 +114,17 @@ function createCard(title, link) {
     const cardImage = cardElement.querySelector('.element__image');
     const cardTitle = cardElement.querySelector('.element__subtitle');
     const cardLike = cardElement.querySelector('.element__like');
+    const cardDelete = cardElement.querySelector('.element__delete');
 
     cardImage.src = link;
     cardTitle.textContent = title;
     cardLike.addEventListener('click', function () {
         cardLike.classList.toggle('element__like_active');
     });
+    cardDelete.addEventListener('click', function (){
+       card.remove();
+    });
     return cardElement;
 }
 
 popupAdd.addEventListener('submit', addElement);
-
-
-const likeDisable = document.querySelector('.element__like');
-likeDisable.addEventListener('click', function () {
-    likeDisable.classList.toggle('element__like_active');
-});
