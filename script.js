@@ -7,7 +7,6 @@ const nameInput = document.querySelector('.popup__input[name="name"]');
 const jobInput = document.querySelector('.popup__input[name="about"]');
 const addButton = document.querySelector('.profile__add-button');
 const template = document.querySelector('#elements');
-const cardDelete = document.querySelector('.element__delete');
 const initialCards = [
     {
         name: 'Архыз',
