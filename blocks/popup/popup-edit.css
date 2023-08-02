@@ -1,4 +1,4 @@
-.popup {
+.popup-edit {
   display: none;
   justify-content: center;
   align-items: center;
@@ -10,7 +10,7 @@
   color: #FFF;
   }
 
-  .popup:before {
+  .popup-edit:before {
     content: "";
     position: fixed;
     top: 0;
