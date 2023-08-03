@@ -1,5 +1,6 @@
 const popupEdit = document.querySelector('.popup-edit');
 const popupAdd = document.querySelector('.popup-add');
+const popupImage = document.querySelector('.popup-image');
 const closeButton = document.querySelectorAll('.popup__close-button');
 const editButton = document.querySelector('.profile__edit-button');
 const formElement = document.querySelector('.profile_edit');
@@ -66,6 +67,7 @@ editButton.addEventListener('click', function () {
 addButton.addEventListener('click', function () {
     popupAdd.classList.add('popup_opened');
 });
+
 
 closeButton.forEach(button => {
     button.addEventListener('click', () => {
