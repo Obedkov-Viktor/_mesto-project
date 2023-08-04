@@ -1,6 +1,6 @@
 const popupEdit = document.querySelector('.popup-edit');
 const popupAdd = document.querySelector('.popup-add');
-const popupImage = document.querySelector('.popup-image');
+const popupPicture = document.querySelector('.popup-picture');
 const closeButton = document.querySelectorAll('.popup__close-button');
 const editButton = document.querySelector('.profile__edit-button');
 const formElement = document.querySelector('.profile_edit');
@@ -35,6 +35,24 @@ const initialCards = [
     }
 ];
 
+document.addEventListener('DOMContentLoaded', function() {
+    const galleryImages = document.querySelectorAll('.element__image');
+    const popup = document.querySelector('.popup-picture');
+    const popupImage = document.querySelector('.popup__image');
+    const popupClose = document.querySelector('.popup__close-button');
+
+    galleryImages.forEach(function(image) {
+        image.addEventListener('click', function() {
+            popupImage.src = this.src;
+            popup.style.display = 'block';
+        });
+    });
+
+    popupClose.addEventListener('click', function() {
+        popup.style.display = 'none';
+    });
+});
+
 function renderCard({name, link}) {
     const newElement = template.content.cloneNode(true);
     const image = newElement.querySelector('.element__image');
@@ -43,7 +61,12 @@ function renderCard({name, link}) {
     const list = document.querySelector('.elements__list');
     const likeButton = card.querySelector('.element__like');
     const elementDelete = card.querySelector('.element__delete');
+    const popup = document.querySelector('.popup-picture');
+    const popupClose = document.querySelector('.popup__close-button');
+    const popupImage = document.querySelector('.popup__image');
     image.src = link;
+    popupImage.src = this.src;
+    popup.style.display = 'block';
     image.alt = 'Новое изображение';
     subtitle.textContent = name;
     likeButton.addEventListener('click', function (){
@@ -53,6 +76,9 @@ function renderCard({name, link}) {
        card.remove();
     });
 
+    popupClose.addEventListener('click', function() {
+        popup.style.display = 'none';
+    });
     list.appendChild(newElement);
 }
 
@@ -75,6 +101,8 @@ closeButton.forEach(button => {
             popupEdit.classList.remove('popup_opened');
         } else if (button.closest('.popup-add')) {
             popupAdd.classList.remove('popup_opened');
+        }else if(button.closest('.popup-picture')){
+            popupPicture.style.display = 'none';
         }
     });
 });

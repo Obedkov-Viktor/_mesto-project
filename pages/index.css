@@ -38,9 +38,25 @@
 @import url(../blocks/popup/__fieldset/popup__fieldset.css);
 @import url(../blocks/popup/__save-button/popup__save-button.css);
 @import url(../blocks/popup/__close-button/popup__close-button.css);
-@import url(../blocks/popup/popup-image.css);
 @import url(../blocks/popup/__image/popup__image.css);
 
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);
 @import url(../blocks/button/button.css);
+
+@import url(../blocks/popup/popup-picture.css);
+
+.popup__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.gallery {
+    display: inline-block;
+}
+
+.gallery__image {
+    cursor: pointer;
+}
