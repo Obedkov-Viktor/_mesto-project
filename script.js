@@ -35,56 +35,6 @@ const initialCards = [
     }
 ];
 
-document.addEventListener('DOMContentLoaded', function() {
-    const galleryImages = document.querySelectorAll('.element__image');
-    const popup = document.querySelector('.popup-picture');
-    const popupImage = document.querySelector('.popup__image');
-    const popupClose = document.querySelector('.popup__close-button');
-
-    galleryImages.forEach(function(image) {
-        image.addEventListener('click', function() {
-            popupImage.src = this.src;
-            popup.style.display = 'block';
-        });
-    });
-
-    popupClose.addEventListener('click', function() {
-        popup.style.display = 'none';
-    });
-});
-
-function renderCard({name, link}) {
-    const newElement = template.content.cloneNode(true);
-    const image = newElement.querySelector('.element__image');
-    const subtitle = newElement.querySelector('.element__subtitle');
-    const card = newElement.querySelector('.element');
-    const list = document.querySelector('.elements__list');
-    const likeButton = card.querySelector('.element__like');
-    const elementDelete = card.querySelector('.element__delete');
-    const popup = document.querySelector('.popup-picture');
-    const popupClose = document.querySelector('.popup__close-button');
-    const popupImage = document.querySelector('.popup__image');
-    image.src = link;
-    popupImage.src = this.src;
-    popup.style.display = 'block';
-    image.alt = 'Новое изображение';
-    subtitle.textContent = name;
-    likeButton.addEventListener('click', function (){
-        likeButton.classList.toggle('element__like_active');
-    });
-    elementDelete.addEventListener('click', function (){
-       card.remove();
-    });
-
-    popupClose.addEventListener('click', function() {
-        popup.style.display = 'none';
-    });
-    list.appendChild(newElement);
-}
-
-
-initialCards.forEach(renderCard);
-
 editButton.addEventListener('click', function () {
     nameInput.value = document.querySelector('.profile__name').textContent;
     jobInput.value = document.querySelector('.profile__subtitle').textContent;
@@ -94,19 +44,17 @@ addButton.addEventListener('click', function () {
     popupAdd.classList.add('popup_opened');
 });
 
-
 closeButton.forEach(button => {
     button.addEventListener('click', () => {
         if (button.closest('.popup-edit')) {
             popupEdit.classList.remove('popup_opened');
         } else if (button.closest('.popup-add')) {
             popupAdd.classList.remove('popup_opened');
-        }else if(button.closest('.popup-picture')){
+        } else if (button.closest('.popup-picture')) {
             popupPicture.style.display = 'none';
         }
     });
 });
-
 
 function closePopup() {
     const popup = document.querySelector('.popup_opened');
@@ -136,24 +84,28 @@ function addElement(evt) {
     closePopup();
 }
 
-function createCard(title, link) {
-    const template = document.querySelector('#elements');
+function createCard({title, link}) {
+    console.log(link)
+    console.log(title)
     const cardElement = template.content.cloneNode(true);
     const card = cardElement.querySelector('.element');
     const cardImage = cardElement.querySelector('.element__image');
     const cardTitle = cardElement.querySelector('.element__subtitle');
     const cardLike = cardElement.querySelector('.element__like');
     const cardDelete = cardElement.querySelector('.element__delete');
-
+    const list = document.querySelector('.elements__list');
     cardImage.src = link;
     cardTitle.textContent = title;
     cardLike.addEventListener('click', function () {
         cardLike.classList.toggle('element__like_active');
     });
-    cardDelete.addEventListener('click', function (){
-       card.remove();
+    cardDelete.addEventListener('click', function () {
+        card.remove();
     });
-    return cardElement;
+    console.log(list.appendChild(cardElement));
+    return list.appendChild(cardElement);
 }
 
+initialCards.forEach(createCard);
 popupAdd.addEventListener('submit', addElement);
+
