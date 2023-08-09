@@ -1,5 +1,5 @@
 .popup-add {
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -8,6 +8,9 @@
     left: 0;
     position: fixed;
     color: #FFF;
+    opacity: 0;
+    transition: visibility .3s,opacity .3s linear,height 0s .3s;
+    visibility: hidden;
 }
 
 .popup-add:before {

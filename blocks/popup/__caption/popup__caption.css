@@ -1,0 +1,10 @@
+.popup__caption{
+    font-family: Inter,Arial,sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    grid-area: popup__caption;
+    line-height: 15px;
+    margin: 0;
+    padding: 0;
+}

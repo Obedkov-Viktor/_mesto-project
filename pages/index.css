@@ -46,17 +46,4 @@
 
 @import url(../blocks/popup/popup-picture.css);
 
-.popup__close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-}
-
-.gallery {
-    display: inline-block;
-}
-
-.gallery__image {
-    cursor: pointer;
-}
+@import url(../blocks/popup/__caption/popup__caption.css);

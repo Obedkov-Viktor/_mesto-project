@@ -5,7 +5,23 @@
     width: 430px;
 }
 
-@media screen and (max-width:320px) {
+.popup__container_type_image {
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    display: grid;
+    grid-template-areas:
+    "none        "
+    "popup__image-block"
+    "popup__caption  ";
+    grid-template-rows: 1fr auto 1fr;
+    margin: 0;
+    padding: 0;
+    row-gap: 10px;
+    width: auto;
+}
+
+@media screen and (max-width: 320px) {
     .popup__container {
         width: 282px;
     }
