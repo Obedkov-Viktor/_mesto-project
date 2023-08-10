@@ -91,6 +91,7 @@ nameInput.value = currentName;
 jobInput.value = currentJob;
 
 // Добавьте обработчик события для отправки формы
+
 document.querySelector('.profile_edit').addEventListener('submit', handleFormSubmit);
 
 function handleFormSubmit(evt) {
@@ -114,10 +115,8 @@ const popupForm = document.querySelector('.profile_add');
 
 popupForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    const titleInput = popupForm.querySelector('.popup__input[name="title"]');
-    console.log(titleInput)
-    const imageInput = popupForm.querySelector('.popup__input[name="link"]');
-    console.log(imageInput)
+    const titleInput = popupForm.querySelector('.popup__input[name="title"]').value;
+    const imageInput = popupForm.querySelector('.popup__input[name="link"]').value;
     renderCard({name:titleInput, link:imageInput});
     closeModal();
 });
