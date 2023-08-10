@@ -33,8 +33,10 @@ function renderCard({name, link}) {
     const like = card.querySelector('.element__like');
     const basket = card.querySelector('.element__delete');
     const list = document.querySelector('.elements__list');
+
     image.src = link;
     image.alt = 'Новое изображение';
+
     subtitle.textContent = name;
     like.addEventListener('click', function () {
         like.classList.toggle('element__like_active');
@@ -50,6 +52,7 @@ const editProfileButton = document.querySelector('.profile__edit-button');//кн
 const popupAdd = document.querySelector('.popup-add'); //модальное кнопка для добавление картинки и ссылки
 const popupEdit = document.querySelector('.popup-edit');//Модальное кнопка для редактирование профиль
 const popupCloseButton = document.querySelector('.popup__close-button'); // Кнопка закрытия  модального окно
+const popupImage = document.querySelector('.popup-picture');//Модальное кнопка для октрытая фотография
 
 /////////////////    Открыть модального окно    /////////////////////
 function openModal(popup) {
@@ -64,6 +67,7 @@ function openModal(popup) {
 function closeModal(popup) {
     popupAdd.classList.remove('popup_opened');
     popupEdit.classList.remove('popup_opened');
+    popupImage.classList.remove('popup_opened');
 }
 
 addProfileButton.addEventListener('click', () => {
@@ -120,3 +124,5 @@ popupForm.addEventListener('submit', (event) => {
     renderCard({name:titleInput, link:imageInput});
     closeModal();
 });
+
+///////// обработчик события клика на изображение ///////////
