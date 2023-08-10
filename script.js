@@ -27,23 +27,20 @@ const initialCards = [
 
 function renderCard({name, link}) {
     const template = document.querySelector('#elements');
-    const card = template.content.cloneNode(true);
-    const element = card.querySelector('.element');
+    const card = template.content.querySelector('.element').cloneNode(true);
     const image = card.querySelector('.element__image');
     const subtitle = card.querySelector('.element__subtitle');
     const like = card.querySelector('.element__like');
     const basket = card.querySelector('.element__delete');
-
-
     const list = document.querySelector('.elements__list');
     image.src = link;
     image.alt = 'Новое изображение';
-    subtitle.name = name;
+    subtitle.textContent = name;
     like.addEventListener('click', function () {
         like.classList.toggle('element__like_active');
     });
     basket.addEventListener('click', function () {
-        element.remove();
+        card.remove();
     });
     return list.appendChild(card);
 }
@@ -54,27 +51,73 @@ const popupAdd = document.querySelector('.popup-add'); //модальное кн
 const popupEdit = document.querySelector('.popup-edit');//Модальное кнопка для редактирование профиль
 const popupCloseButton = document.querySelector('.popup__close-button'); // Кнопка закрытия  модального окно
 
-//Открыть модального окно
+/////////////////    Открыть модального окно    /////////////////////
 function openModal(popup) {
     const closeButton = popup.querySelector('.popup__close-button');
     popup.classList.add('popup_opened');
-    closeButton.addEventListener('click', ()=>{
+    closeButton.addEventListener('click', () => {
         closeModal(popup);
     });
 }
 
-//закрыть модального окно
+///////        закрыть модального окно     //////////////
 function closeModal(popup) {
     popupAdd.classList.remove('popup_opened');
     popupEdit.classList.remove('popup_opened');
 }
 
-addProfileButton.addEventListener('click', ()=>{
+addProfileButton.addEventListener('click', () => {
     openModal(popupAdd);
 });
-editProfileButton.addEventListener('click',()=>{
+editProfileButton.addEventListener('click', () => {
     openModal(popupEdit);
 })
 
-
 initialCards.forEach(renderCard);
+
+///////////////    Редактирование профиль    //////////////////
+
+const currentNameElement = document.querySelector('.profile__name');
+const currentJobElement = document.querySelector('.profile__subtitle');
+
+const currentName = currentNameElement.textContent;
+const currentJob = currentJobElement.textContent;
+
+// Найдите поля формы в DOM и установите их значения
+const nameInput = document.querySelector('.popup__input[name="name"]');
+const jobInput = document.querySelector('.popup__input[name="about"]');
+
+nameInput.value = currentName;
+jobInput.value = currentJob;
+
+// Добавьте обработчик события для отправки формы
+document.querySelector('.profile_edit').addEventListener('submit', handleFormSubmit);
+
+function handleFormSubmit(evt) {
+    evt.preventDefault();
+
+    const nameValue = nameInput.value;
+    const jobValue = jobInput.value;
+
+    const nameOutput = document.querySelector('.profile__name');
+    const jobOutput = document.querySelector('.profile__subtitle');
+
+    nameOutput.textContent = nameValue;
+    jobOutput.textContent = jobValue;
+
+    closeModal();
+}
+
+/////////  Добавление картинки  /////////////
+
+const popupForm = document.querySelector('.profile_add');
+
+popupForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const titleInput = popupForm.querySelector('.popup__input[name="title"]');
+    console.log(titleInput)
+    const imageInput = popupForm.querySelector('.popup__input[name="link"]');
+    console.log(imageInput)
+    renderCard({name:titleInput, link:imageInput});
+    closeModal();
+});
