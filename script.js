@@ -28,14 +28,13 @@ const initialCards = [
 function renderCard({name, link}) {
     const template = document.querySelector('#elements');
     const card = template.content.querySelector('.element').cloneNode(true);
-    const image = card.querySelector('.element__image');
+    const imageElement = card.querySelector('.element__image');
     const subtitle = card.querySelector('.element__subtitle');
     const like = card.querySelector('.element__like');
     const basket = card.querySelector('.element__delete');
     const list = document.querySelector('.elements__list');
-
-    image.src = link;
-    image.alt = 'Новое изображение';
+    imageElement.src = link;
+    imageElement.alt = 'Новое изображение';
 
     subtitle.textContent = name;
     like.addEventListener('click', function () {
@@ -44,6 +43,25 @@ function renderCard({name, link}) {
     basket.addEventListener('click', function () {
         card.remove();
     });
+
+    ///////// обработчик события клика на изображение ///////////
+
+    imageElement.addEventListener('click', function (){
+        const popupImage = document.querySelector('.popup-picture');
+        const popupCloseButton = popupImage.querySelector('.popup__close-button');
+        const popupImageElement = popupImage.querySelector('.popup__image');
+        const popupCaption = popupImage.querySelector('.popup__caption');
+
+        popupImageElement.src = link;
+        popupImageElement.alt = name;
+        popupCaption.textContent = name;
+        openModal(popupImage);
+
+        popupCloseButton.addEventListener('click', function (){
+            closeModal(popupImage);
+        })
+    })
+
     return list.appendChild(card);
 }
 
@@ -52,7 +70,7 @@ const editProfileButton = document.querySelector('.profile__edit-button');//кн
 const popupAdd = document.querySelector('.popup-add'); //модальное кнопка для добавление картинки и ссылки
 const popupEdit = document.querySelector('.popup-edit');//Модальное кнопка для редактирование профиль
 const popupCloseButton = document.querySelector('.popup__close-button'); // Кнопка закрытия  модального окно
-const popupImage = document.querySelector('.popup-picture');//Модальное кнопка для октрытая фотография
+// const popupImage = document.querySelector('.popup-picture');//Модальное кнопка для октрытая фотография
 
 /////////////////    Открыть модального окно    /////////////////////
 function openModal(popup) {
@@ -67,7 +85,6 @@ function openModal(popup) {
 function closeModal(popup) {
     popupAdd.classList.remove('popup_opened');
     popupEdit.classList.remove('popup_opened');
-    popupImage.classList.remove('popup_opened');
 }
 
 addProfileButton.addEventListener('click', () => {
