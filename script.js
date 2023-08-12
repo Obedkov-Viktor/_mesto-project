@@ -142,4 +142,3 @@ popupForm.addEventListener('submit', (event) => {
     closeModal();
 });
 
-///////// обработчик события клика на изображение ///////////
